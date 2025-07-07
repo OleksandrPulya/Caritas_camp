@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Caritas camp - Дитячий табір</title>
   <style>
     body {
@@ -40,26 +40,24 @@
       font-size: 1.5em;
       margin-top: 20px;
     }
-    .filters {
-      margin-top: 100px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    select, input[type="text"] {
-      padding: 10px;
-      font-size: 1em;
-    }
     nav {
       margin-top: 50px;
     }
     nav a {
       margin: 0 15px;
       text-decoration: none;
-      color: #0061ff;
+      color: #000; /* чорний текст */
       font-weight: bold;
       font-size: 1.2em;
+      padding: 8px 20px;
+      border: 2px solid #0061ff; /* синя обводка */
+      border-radius: 25px; /* овал */
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav a:hover {
+      background-color: #0061ff;
+      color: #fff;
     }
   </style>
 </head>
@@ -72,10 +70,6 @@
   <main>
     <div class="main-title">Дитячий літній табір у Польщі</div>
     <div class="subtitle">Відпочинок для дітей = для батьків</div>
-
-    <div class="filters">
-      <!-- Фільтри видалено згідно з інструкцією -->
-    </div>
 
     <nav>
       <a href="#">Про нас</a>
