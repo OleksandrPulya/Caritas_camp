@@ -24,12 +24,6 @@
       font-size: 2em;
       margin-left: 30px;
     }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-    }
     .phone {
       background: white;
       padding: 10px 20px;
@@ -57,16 +51,21 @@
       padding: 10px;
       font-size: 1em;
     }
+    nav {
+      margin-top: 50px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0061ff;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">Caritas camp</div>
-    <nav>
-      <a href="#">Про нас</a>
-      <a href="#">Фото</a>
-      <a href="#">Відео</a>
-    </nav>
     <div class="phone">*ТЕЛЕФОН</div>
   </header>
 
@@ -75,28 +74,14 @@
     <div class="subtitle">Відпочинок для дітей = для батьків</div>
 
     <div class="filters">
-      <select>
-        <option>Регіон</option>
-        <option>Київ</option>
-        <option>Львів</option>
-        <option>Одеса</option>
-      </select>
-
-      <select>
-        <option>Ціна</option>
-        <option>до 5000 грн</option>
-        <option>5000 - 10000 грн</option>
-        <option>понад 10000 грн</option>
-      </select>
-
-      <input type="text" placeholder="Пошук таборів...">
-
-      <select>
-        <option>Сортування: за замовчуванням</option>
-        <option>за ціною</option>
-        <option>за рейтингом</option>
-      </select>
+      <!-- Фільтри видалено згідно з інструкцією -->
     </div>
+
+    <nav>
+      <a href="#">Про нас</a>
+      <a href="#">Фото</a>
+      <a href="#">Відео</a>
+    </nav>
   </main>
 </body>
 </html>
