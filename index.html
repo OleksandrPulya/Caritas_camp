@@ -1,35 +1,102 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O.PULYA</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="logo123.png">
+  <title>EduCamp - Дитячі табори</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      text-align: center;
+    }
+    header {
+      background-color: #fefe2f;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 2em;
+      margin-left: 30px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .phone {
+      background: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      margin-right: 30px;
+    }
+    .main-title {
+      font-size: 3em;
+      font-weight: bold;
+      margin-top: 100px;
+    }
+    .subtitle {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+    .filters {
+      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    select, input[type="text"] {
+      padding: 10px;
+      font-size: 1em;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo123.png" alt="Logo" class="logo">
-    <h1>O. PULYA</h1>
+  <header>
+    <div class="logo">EduCamp</div>
+    <nav>
+      <a href="#">Про нас</a>
+      <a href="#">Для батьків</a>
+      <a href="#">Співпраця</a>
+    </nav>
+    <div class="phone">098-282-82-62</div>
+  </header>
 
-    <a class="button tiktok" href="https://www.tiktok.com/@oleksandr_pulya?is_from_webapp=1&sender_device=pc" target="_blank">
-      <img src="logo_tik_tok.jpg" alt="TikTok"> Oleksandr Pulya
-    </a>
+  <main>
+    <div class="main-title">Дитячі літні табори в Україні та за кордоном</div>
+    <div class="subtitle">Відпочинок для дітей = для батьків</div>
 
-    <a class="button tiktok" href="https://www.tiktok.com/@budanova_r?is_from_webapp=1&sender_device=pc" target="_blank">
-      <img src="logo_tik_tok.jpg" alt="TikTok" alt="TikTok"> Roksa Budanova
-    </a>
+    <div class="filters">
+      <select>
+        <option>Регіон</option>
+        <option>Київ</option>
+        <option>Львів</option>
+        <option>Одеса</option>
+      </select>
 
-    <a class="button discord" href="https://discord.gg/6QGCMJTe" target="_blank">
-      <img src="logo_discord.png" alt="Discord"> Discord
-    </a>
+      <select>
+        <option>Ціна</option>
+        <option>до 5000 грн</option>
+        <option>5000 - 10000 грн</option>
+        <option>понад 10000 грн</option>
+      </select>
 
-    <a class="button telegram" href="https://t.me/+5BQc12t6re0yNTcy" target="_blank">
-      <img src="telegram.original.jpg" alt="Telegram"> Telegram
-    </a>
+      <input type="text" placeholder="Пошук таборів...">
 
-    <footer>© 2025 O.PULYA</footer>
-  </div>
+      <select>
+        <option>Сортування: за замовчуванням</option>
+        <option>за ціною</option>
+        <option>за рейтингом</option>
+      </select>
+    </div>
+  </main>
 </body>
 </html>
