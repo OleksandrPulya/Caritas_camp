@@ -102,42 +102,47 @@
     }
 
     .square-button {
-      width: 150px;
-      height: 150px;
-      background-color: #007bc7;
-      color: white;
-      font-size: 18px;
+      width: 120px;
+      height: 60px;
+      background-color: white;
+      color: #007bc7;
+      font-size: 16px;
       font-weight: bold;
-      border: none;
-      border-radius: 20px;
+      border: 2px solid #007bc7;
+      border-radius: 15px;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .square-button:hover {
-      background-color: #005b94;
-      transform: scale(1.05);
+      background-color: #007bc7;
+      color: white;
     }
 
     .sub-button {
-      display: none;
-      margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 14px;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease, margin 0.4s ease;
       background-color: #00aaff;
       color: #fff;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      font-size: 14px;
+      padding: 0 16px;
+      margin-top: 0;
+    }
+
+    .sub-button.show {
+      max-height: 40px;
+      opacity: 1;
+      padding: 8px 16px;
+      margin-top: 10px;
     }
 
     .sub-button:hover {
       background-color: #007799;
-    }
-
-    .show {
-      display: block;
     }
   </style>
 </head>
@@ -160,8 +165,7 @@
 
   <main>
     <div class="button-grid">
-      <!-- Кнопки -->
-      <!-- Повторюємо 12 разів -->
+      <!-- Кнопки з анімацією -->
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">Кнопка 1</button>
         <button class="sub-button">Додаткова 1</button>
