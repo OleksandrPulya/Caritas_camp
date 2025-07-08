@@ -84,26 +84,64 @@
     main {
       max-width: 800px;
       margin: 160px auto 30px;
-      padding: 0 180px; /* відступи з боків через фіксовані банери */
-      line-height: 1.6;
-      text-align: left;
+      padding: 0 180px;
+      text-align: center;
     }
 
-    p {
-      margin: 6px 0;
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-items: center;
     }
 
-    ul {
-      padding-left: 20px;
-      margin: 6px 0 12px;
+    .button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    li {
-      margin: 4px 0;
+    .square-button {
+      width: 150px;
+      height: 150px;
+      background-color: #007bc7;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .square-button:hover {
+      background-color: #005b94;
+      transform: scale(1.05);
+    }
+
+    .sub-button {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #00aaff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .sub-button:hover {
+      background-color: #007799;
+    }
+
+    .show {
+      display: block;
     }
   </style>
 </head>
-<body> 
+<body>
   <header>
     <div class="logo-container">
       <img src="logo.png" alt="Логотип">
@@ -112,60 +150,74 @@
     <a class="back-home" href="index.html">← На головну</a>
   </header>
 
-  <!-- Лівий банер -->
   <div class="side-banner left-banner">
     <img src="baner.jpg" alt="Банер зліва">
   </div>
 
-  <!-- Правий банер -->
   <div class="side-banner right-banner">
     <img src="baner.jpg" alt="Банер справа">
   </div>
 
   <main>
-    <h1>Про нас</h1>
-    <p>Карітас (Caritas) — це міжнародна мережа благодійних організацій...</p>
-
-    <br><p>🔹 Основна інформація:</p>
-    <ul>
-      <li>Назва: "Caritas" з латини означає "любов", "милосердя", "жертвенність".</li>
-      <li>Діяльність: понад 160 країн світу.</li>
-      <li>Рік створення: перші організації з'явилися наприкінці XIX століття...</li>
-      <li>Центр: штаб-квартира Caritas Internationalis розташована в Римі.</li>
-    </ul>
-
-    <br><p>🔹 Caritas в Україні:</p>
-    <ul>
-      <li>Карітас України почав свою діяльність у 1992 році...</li>
-      <li>Організація працює у співпраці з греко-католицькою церквою...</li>
-    </ul>
-
-    <br><p>🔹 Основні напрями роботи:</p>
-    <ul>
-      <li>Допомога внутрішньо переміщеним особам (ВПО)...</li>
-      <li>Підтримка дітей і молоді...</li>
-      <li>Опіка над людьми похилого віку та особами з інвалідністю.</li>
-      <li>Гуманітарна допомога під час надзвичайних ситуацій.</li>
-      <li>Медична та психосоціальна підтримка.</li>
-      <li>Підтримка сімей у кризових ситуаціях.</li>
-    </ul>
-
-    <br><p>🔹 Принципи роботи:</p>
-    <ul>
-      <li>Гідність людини понад усе.</li>
-      <li>Служіння любові.</li>
-      <li>Солідарність і соціальна справедливість.</li>
-      <li>Професійність та прозорість у діяльності.</li>
-    </ul>
-
-    <br><p>🔹 Цікаво:</p>
-    <ul>
-      <li>Карітас організовує дитячі літні табори...</li>
-      <li>Має багато волонтерських програм...</li>
-    </ul>
-
-    <p>🔗 Офіційний сайт Caritas Ukraine: <a href="https://caritas.ua" target="_blank">https://caritas.ua</a></p>
-    <p>🔗 Офіційний сайт Caritas Khmelnytskyi: <a href="https://www.caritas.km.ua/" target="_blank">https://www.caritas.km.ua/</a></p>
+    <div class="button-grid">
+      <!-- Кнопки -->
+      <!-- Повторюємо 12 разів -->
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 1</button>
+        <button class="sub-button">Додаткова 1</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 2</button>
+        <button class="sub-button">Додаткова 2</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 3</button>
+        <button class="sub-button">Додаткова 3</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 4</button>
+        <button class="sub-button">Додаткова 4</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 5</button>
+        <button class="sub-button">Додаткова 5</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 6</button>
+        <button class="sub-button">Додаткова 6</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 7</button>
+        <button class="sub-button">Додаткова 7</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 8</button>
+        <button class="sub-button">Додаткова 8</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 9</button>
+        <button class="sub-button">Додаткова 9</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 10</button>
+        <button class="sub-button">Додаткова 10</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 11</button>
+        <button class="sub-button">Додаткова 11</button>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 12</button>
+        <button class="sub-button">Додаткова 12</button>
+      </div>
+    </div>
   </main>
+
+  <script>
+    function toggleSubButton(mainButton) {
+      const subButton = mainButton.nextElementSibling;
+      subButton.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
