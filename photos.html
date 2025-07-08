@@ -91,11 +91,11 @@
     .button-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
+      gap: 4px; /* Мінімальна відстань між кнопками */
     }
 
     .button-wrapper {
-      height: 100px; /* досить місця для 2 кнопок */
+      height: 75px; /* Мінімально необхідна висота */
       position: relative;
       display: flex;
       flex-direction: column;
@@ -105,16 +105,15 @@
 
     .square-button {
       width: 120px;
-      height: 40px;
+      height: 36px;
       background-color: white;
       color: #007bc7;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: bold;
       border: 2px solid #007bc7;
-      border-radius: 12px;
+      border-radius: 10px;
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
-      z-index: 1;
     }
 
     .square-button:hover {
@@ -127,18 +126,18 @@
       background-color: #00aaff;
       color: #fff;
       border: none;
-      border-radius: 10px;
-      font-size: 14px;
-      margin-top: 6px;
-      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-top: 4px;
+      padding: 5px 10px;
       max-height: 0;
       overflow: hidden;
       opacity: 0;
-      transition: max-height 0.4s ease, opacity 0.4s ease;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
     }
 
     .sub-button.show {
-      max-height: 40px;
+      max-height: 36px;
       opacity: 1;
     }
   </style>
@@ -163,9 +162,6 @@
   <main>
     <div class="button-grid">
       <!-- 12 кнопок -->
-      <!-- Кожна кнопка має свій блок з фіксованою висотою -->
-      <!-- Можеш замінити текст у кнопках за бажанням -->
-
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">Кнопка 1</button>
         <button class="sub-button">Під-кнопка</button>
