@@ -19,20 +19,33 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+    }
+
+    .logo-container img {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .logo-text {
       font-weight: bold;
       font-size: 2em;
-      margin-left: 30px;
-      color: white; /* Білий колір логотипу */
+      color: white;
     }
+
     .phone {
       background: white;
       padding: 10px 20px;
       border-radius: 25px;
       font-weight: bold;
       margin-right: 30px;
-      color: #000; /* Чорний текст */
+      color: #000;
     }
+
     .banner img {
       width: 100%;
       max-height: 300px;
@@ -41,38 +54,45 @@
       margin: 0 auto;
       border-radius: 10px;
     }
+
     .main-title {
       font-size: 3em;
       font-weight: bold;
       margin-top: 40px;
     }
+
     .subtitle {
       font-size: 1.5em;
       margin-top: 20px;
     }
+
     nav {
       margin-top: 50px;
     }
+
     nav a {
       margin: 0 15px;
       text-decoration: none;
-      color: #000; /* чорний текст */
+      color: #000;
       font-weight: bold;
       font-size: 1.2em;
       padding: 8px 20px;
-      border: 2px solid #0061ff; /* синя обводка */
-      border-radius: 25px; /* овал */
+      border: 2px solid #0061ff;
+      border-radius: 25px;
       display: inline-block;
       transition: background-color 0.3s, color 0.3s;
     }
+
     nav a:hover {
       background-color: #0061ff;
       color: #fff;
     }
+
     .extra-photo {
       margin-top: 60px;
       margin-bottom: 40px;
     }
+
     .extra-photo img {
       width: 90%;
       max-width: 800px;
@@ -83,7 +103,10 @@
 </head>
 <body>
   <header>
-    <div class="logo">Caritas camp</div>
+    <div class="logo-container">
+      <img src="logo.png" alt="Логотип Caritas" />
+      <div class="logo-text">Caritas camp</div>
+    </div>
     <div class="phone">*ТЕЛЕФОН</div>
   </header>
 
