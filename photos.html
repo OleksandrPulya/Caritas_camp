@@ -2,105 +2,25 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Фото з табору</title>
+  <title>Кнопки</title>
   <style>
     body {
-      margin: 0;
+      margin: 40px;
       font-family: Arial, sans-serif;
       background: #fff;
       color: #000;
     }
 
-    header {
-      background-color: #007bc7;
-      padding: 20px;
+    .container {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
+      justify-content: center;
+      gap: 40px;
     }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      margin-left: 30px;
-    }
-
-    .logo-container img {
-      height: 50px;
-      margin-right: 15px;
-    }
-
-    .logo-text {
-      font-weight: bold;
-      font-size: 2em;
-      color: white;
-    }
-
-    .back-home {
-      background: white;
-      color: #000000;
-      padding: 10px 5px;
-      border-radius: 25px;
-      font-weight: bold;
-      margin-right: 30px;
-      text-decoration: none;
-      border: 2px solid white;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .back-home:hover {
-      background-color: #ffffff;
-      color: #004c8c;
-    }
-
-    .side-banner {
-      width: 150px;
-      position: fixed;
-      top: 100px;
-      z-index: 500;
-    }
-
-    .left-banner {
-      left: 0;
-      padding-left: 50px;
-    }
-
-    .right-banner {
-      right: 0;
-      padding-right: 50px;
-    }
-
-    .side-banner img {
-      width: 100%;
-      max-width: 150px;
-      border-radius: 200px;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 160px auto 30px;
-      padding: 0 180px;
-      text-align: center;
-    }
-
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0px; /* мінімальний відступ */
-    }
-
-    .button-wrapper {
-      margin: 0;
-      padding: 0;
+    .column {
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: all 0.3s ease;
     }
 
     .square-button {
@@ -130,6 +50,7 @@
       border-radius: 8px;
       font-size: 13px;
       margin-top: 2px;
+      margin-bottom: 6px; /* Відстань між підкнопкою та наступною кнопкою */
       padding: 5px 10px;
       max-height: 0;
       overflow: hidden;
@@ -138,87 +59,47 @@
     }
 
     .sub-button.show {
-      max-height: 36px;
+      max-height: 40px;
       opacity: 1;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <img src="logo.png" alt="Логотип">
-      <div class="logo-text">Caritas camp</div>
+
+  <div class="container">
+    <!-- Ліва колонка -->
+    <div class="column">
+      <button class="square-button" onclick="toggleSub(this)">Кнопка 1</button>
+      <button class="sub-button">Під-кнопка</button>
+
+      <button class="square-button">Кнопка 2</button>
+      <button class="square-button">Кнопка 3</button>
+      <button class="square-button">Кнопка 4</button>
+      <button class="square-button">Кнопка 5</button>
+      <button class="square-button">Кнопка 6</button>
     </div>
-    <a class="back-home" href="index.html">← На головну</a>
-  </header>
 
-  <div class="side-banner left-banner">
-    <img src="baner.jpg" alt="Банер зліва">
-  </div>
+    <!-- Права колонка -->
+    <div class="column">
+      <button class="square-button" onclick="toggleSub(this)">Кнопка 7</button>
+      <button class="sub-button">Під-кнопка</button>
 
-  <div class="side-banner right-banner">
-    <img src="baner.jpg" alt="Банер справа">
-  </div>
-
-  <main>
-    <div class="button-grid">
-      <!-- 12 кнопок -->
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 1</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 2</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 3</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 4</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 5</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 6</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 7</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 8</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 9</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 10</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 11</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">Кнопка 12</button>
-        <button class="sub-button">Під-кнопка</button>
-      </div>
+      <button class="square-button">Кнопка 8</button>
+      <button class="square-button">Кнопка 9</button>
+      <button class="square-button">Кнопка 10</button>
+      <button class="square-button">Кнопка 11</button>
+      <button class="square-button">Кнопка 12</button>
     </div>
-  </main>
+  </div>
 
   <script>
-    function toggleSubButton(btn) {
-      const sub = btn.nextElementSibling;
-      sub.classList.toggle('show');
+    function toggleSub(button) {
+      const next = button.nextElementSibling;
+      if (next && next.classList.contains('sub-button')) {
+        next.classList.toggle('show');
+      }
     }
   </script>
+
 </body>
 </html>
