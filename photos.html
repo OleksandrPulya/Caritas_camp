@@ -110,7 +110,8 @@
       font-size: 15px;
       font-weight: bold;
       border: 2px solid #007bc7;
-      border-radius: 10px;
+      border-bottom: none; /* прибираємо нижню межу */
+      border-radius: 10px 10px 0 0; /* заокруглення тільки верхніх кутів */
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
     }
@@ -127,9 +128,11 @@
       opacity: 0;
       background-color: black;
       border: 2px solid black;
-      border-radius: 10px;
+      border-top: none; /* прибираємо верхню межу */
+      border-radius: 0 0 10px 10px; /* заокруглення тільки нижніх кутів */
       transition: max-height 0.3s ease, opacity 0.3s ease;
-      margin-top: 4px;
+      margin-top: 0; /* прибираємо відступ між кнопкою і підкнопкою */
+      padding: 0;
     }
 
     .sub-wrapper.show {
