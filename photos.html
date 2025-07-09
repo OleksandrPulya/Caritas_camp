@@ -122,9 +122,9 @@
 
     .sub-button {
       width: 250px;
-      background-color: #00aaff;
-      color: #fff;
-      border: none;
+      background-color: white;
+      color: #007bc7;
+      border: 2px solid #007bc7;
       border-radius: 8px;
       font-size: 14px;
       padding: 5px 10px;
@@ -132,7 +132,8 @@
       max-height: 0;
       opacity: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
+      transition: max-height 0.3s ease, opacity 0.3s ease, background-color 0.3s, color 0.3s;
+      text-decoration: none;
     }
 
     .sub-button.show {
@@ -140,10 +141,9 @@
       opacity: 1;
     }
 
-    a.sub-button {
-      display: inline-block;
-      text-align: center;
-      text-decoration: none;
+    .sub-button:hover {
+      background-color: #007bc7;
+      color: white;
     }
   </style>
 </head>
