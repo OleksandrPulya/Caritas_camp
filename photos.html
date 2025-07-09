@@ -15,8 +15,8 @@
     header {
       background-color: #007bc7;
       padding: 20px;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
       position: fixed;
       top: 0;
@@ -42,9 +42,10 @@
       color: white;
     }
 
-    .nav-links {
+    .nav-center {
       display: flex;
       gap: 15px;
+      justify-content: center;
     }
 
     .nav-button {
@@ -64,12 +65,13 @@
     }
 
     .back-home {
+      justify-self: end;
+      margin-right: 30px;
       background: white;
       color: #000000;
       padding: 10px 5px;
       border-radius: 25px;
       font-weight: bold;
-      margin-right: 30px;
       text-decoration: none;
       border: 2px solid white;
       transition: background-color 0.3s, color 0.3s;
@@ -162,8 +164,8 @@
     .sub-button {
       width: 250px;
       background-color: white;
-      color: #000; /* чорний текст */
-      font-weight: bold; /* жирний текст */
+      color: #000;
+      font-weight: bold;
       border: 2px solid #ffcc00;
       border-radius: 8px;
       font-size: 14px;
@@ -188,7 +190,7 @@
       <div class="logo-text">Caritas camp</div>
     </div>
 
-    <div class="nav-links">
+    <div class="nav-center">
       <a class="nav-button" href="about.html">Про нас</a>
       <a class="nav-button" href="video.html">Відео</a>
     </div>
@@ -206,9 +208,6 @@
 
   <main>
     <div class="button-grid">
-      <!-- Кожен день -->
-      <!-- Повторювані блоки -->
-      <!-- Зразок на День 1 -->
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 1</button>
         <div class="sub-wrapper">
@@ -216,8 +215,6 @@
           <a href="day1.html" class="sub-button">Переглянути фото</a>
         </div>
       </div>
-      <!-- Дні 2–12 -->
-      <!-- Скопійовано з шаблону, один під одним -->
       <div class="button-wrapper"><button class="square-button" onclick="toggleSubButton(this)">День 2</button>
         <div class="sub-wrapper">
           <a href="day2.html" class="sub-button">Переглянути фото</a>
