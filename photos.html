@@ -200,4 +200,33 @@
         <a href="day7.html" class="sub-button">Переглянути фото</a>
       </div>
       <div class="button-wrapper">
-        <button class="square-button" on
+        <button class="square-button" onclick="toggleSubButton(this)">День 8</button>
+        <a href="day8.html" class="sub-button">Переглянути фото</a>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 9</button>
+        <a href="day9.html" class="sub-button">Переглянути фото</a>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 10</button>
+        <a href="day10.html" class="sub-button">Переглянути фото</a>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 11</button>
+        <a href="day11.html" class="sub-button">Переглянути фото</a>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 12</button>
+        <a href="day12.html" class="sub-button">Переглянути фото</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleSubButton(btn) {
+      const sub = btn.nextElementSibling;
+      sub.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
