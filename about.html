@@ -2,6 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Про нас - Caritas camp</title>
   <link rel="icon" href="logo.png" type="image/png">
   <style>
@@ -23,22 +24,23 @@
       left: 0;
       right: 0;
       z-index: 1000;
+      gap: 10px;
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      margin-left: 30px;
+      margin-left: 20px;
     }
 
     .logo-container img {
       height: 50px;
-      margin-right: 15px;
+      margin-right: 10px;
     }
 
     .logo-text {
       font-weight: bold;
-      font-size: 2em;
+      font-size: 1.8em;
       color: white;
     }
 
@@ -46,17 +48,20 @@
       display: flex;
       gap: 15px;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .nav-button {
+    .nav-button,
+    .back-home {
       background: white;
-      color: #000000;
+      color: #000;
       padding: 10px 15px;
       border-radius: 25px;
       font-weight: bold;
       text-decoration: none;
       border: 2px solid white;
       transition: background-color 0.3s, color 0.3s;
+      text-align: center;
     }
 
     .nav-button:hover {
@@ -66,15 +71,7 @@
 
     .back-home {
       justify-self: end;
-      margin-right: 30px;
-      background: white;
-      color: #000000;
-      padding: 10px 5px;
-      border-radius: 25px;
-      font-weight: bold;
-      text-decoration: none;
-      border: 2px solid white;
-      transition: background-color 0.3s, color 0.3s;
+      margin-right: 20px;
     }
 
     .back-home:hover {
@@ -91,12 +88,12 @@
 
     .left-banner {
       left: 0;
-      padding-left: 50px;
+      padding-left: 20px;
     }
 
     .right-banner {
       right: 0;
-      padding-right: 50px;
+      padding-right: 20px;
     }
 
     .side-banner img {
@@ -106,11 +103,16 @@
     }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 160px auto 30px;
-      padding: 0 180px; /* відступи з боків через фіксовані банери */
+      padding: 0 180px;
       line-height: 1.6;
       text-align: left;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
     }
 
     p {
@@ -125,9 +127,54 @@
     li {
       margin: 4px 0;
     }
+
+    a {
+      color: #007bc7;
+    }
+
+    /* 📱 Мобільна адаптація */
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 15px;
+      }
+
+      .logo-container {
+        justify-content: center;
+        margin: 0;
+      }
+
+      .logo-text {
+        font-size: 1.5em;
+      }
+
+      .nav-center {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+      }
+
+      .back-home {
+        margin: 10px auto 0;
+      }
+
+      .side-banner {
+        display: none;
+      }
+
+      main {
+        padding: 0 20px;
+        margin-top: 180px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+    }
   </style>
 </head>
-<body> 
+<body>
   <header>
     <div class="logo-container">
       <img src="logo.png" alt="Логотип">
