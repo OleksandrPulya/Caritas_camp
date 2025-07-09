@@ -2,15 +2,295 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Відео - Caritas camp</title>
+  <title>Фото з табору</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    header {
+      background-color: #007bc7;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+    }
+
+    .logo-container img {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    .logo-text {
+      font-weight: bold;
+      font-size: 2em;
+      color: white;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background: white;
+      color: #000000;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-button:hover {
+      background-color: #004c8c;
+      color: white;
+    }
+
+    .back-home {
+      justify-self: end;
+      margin-right: 30px;
+      background: white;
+      color: #000000;
+      padding: 10px 5px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .back-home:hover {
+      background-color: #ffffff;
+      color: #004c8c;
+    }
+
+    .side-banner {
+      width: 150px;
+      position: fixed;
+      top: 100px;
+      z-index: 500;
+    }
+
+    .left-banner {
+      left: 0;
+      padding-left: 50px;
+    }
+
+    .right-banner {
+      right: 0;
+      padding-right: 50px;
+    }
+
+    .side-banner img {
+      width: 100%;
+      max-width: 150px;
+      border-radius: 200px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 160px 170px;
+      padding: 0 180px;
+      text-align: center;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0px;
+    }
+
+    .button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2px 0;
+    }
+
+    .square-button {
+      width: 300px;
+      height: 36px;
+      background-color: white;
+      color: #007bc7;
+      font-size: 15px;
+      font-weight: bold;
+      border: 2px solid #007bc7;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .square-button:hover {
+      background-color: #007bc7;
+      color: white;
+    }
+
+    .sub-wrapper {
+      width: 300px;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      background-color: #007bc7;
+      border: 2px solid #007bc7;
+      border-radius: 10px;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      margin-top: 4px;
+    }
+
+    .sub-wrapper.show {
+      max-height: 60px;
+      opacity: 1;
+      padding: 5px 0;
+    }
+
+    .sub-button {
+      width: 250px;
+      background-color: white;
+      color: #000;
+      font-weight: bold;
+      border: 2px solid #ffcc00;
+      border-radius: 8px;
+      font-size: 14px;
+      padding: 5px 10px;
+      margin: 0 auto;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .sub-button:hover {
+      background-color: #ffcc00;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <h1>Відео з табору</h1>
-  <video controls width="500">
-    <source src="video1.mp4" type="video/mp4">
-    Ваш браузер не підтримує відео.
-  </video>
-  <br>
-  <a href="index.html">← Назад</a>
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="Логотип">
+      <div class="logo-text">Caritas camp</div>
+    </div>
+
+    <div class="nav-center">
+      <a class="nav-button" href="about.html">Про нас</a>
+      <a class="nav-button" href="photos.html">Фото</a>
+    </div>
+
+    <a class="back-home" href="index.html">← На головну</a>
+  </header>
+
+  <div class="side-banner left-banner">
+    <img src="baner.jpg" alt="Банер зліва">
+  </div>
+
+  <div class="side-banner right-banner">
+    <img src="baner.jpg" alt="Банер справа">
+  </div>
+
+  <main>
+    <h1 style="text-align: center; color: #000; margin-bottom: 20px;">Відео</h1>
+
+    <div class="button-grid">
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 1</button>
+        <div class="sub-wrapper">
+          <a href="day1.html" class="sub-button">Переглянути фото</a>
+          <a href="day1.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 2</button>
+        <div class="sub-wrapper">
+          <a href="day2.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 3</button>
+        <div class="sub-wrapper">
+          <a href="day3.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 4</button>
+        <div class="sub-wrapper">
+          <a href="day4.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 5</button>
+        <div class="sub-wrapper">
+          <a href="day5.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 6</button>
+        <div class="sub-wrapper">
+          <a href="day6.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 7</button>
+        <div class="sub-wrapper">
+          <a href="day7.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 8</button>
+        <div class="sub-wrapper">
+          <a href="day8.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 9</button>
+        <div class="sub-wrapper">
+          <a href="day9.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 10</button>
+        <div class="sub-wrapper">
+          <a href="day10.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 11</button>
+        <div class="sub-wrapper">
+          <a href="day11.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+      <div class="button-wrapper">
+        <button class="square-button" onclick="toggleSubButton(this)">День 12</button>
+        <div class="sub-wrapper">
+          <a href="day12.html" class="sub-button">Переглянути фото</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleSubButton(btn) {
+      const wrapper = btn.nextElementSibling;
+      wrapper.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
