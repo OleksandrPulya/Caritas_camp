@@ -123,8 +123,8 @@
     .sub-button {
       width: 250px;
       background-color: white;
-      color: #007bc7;
-      border: 2px solid #007bc7;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
       border-radius: 8px;
       font-size: 14px;
       padding: 5px 10px;
@@ -142,8 +142,13 @@
     }
 
     .sub-button:hover {
-      background-color: #007bc7;
+      background-color: #ffcc00;
       color: white;
+    }
+
+    a.sub-button {
+      display: inline-block;
+      text-align: center;
     }
   </style>
 </head>
@@ -166,7 +171,6 @@
 
   <main>
     <div class="button-grid">
-      <!-- Кнопки -->
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 1</button>
         <a href="day1.html" class="sub-button">Переглянути фото</a>
@@ -196,33 +200,4 @@
         <a href="day7.html" class="sub-button">Переглянути фото</a>
       </div>
       <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">День 8</button>
-        <a href="day8.html" class="sub-button">Переглянути фото</a>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">День 9</button>
-        <a href="day9.html" class="sub-button">Переглянути фото</a>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">День 10</button>
-        <a href="day10.html" class="sub-button">Переглянути фото</a>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">День 11</button>
-        <a href="day11.html" class="sub-button">Переглянути фото</a>
-      </div>
-      <div class="button-wrapper">
-        <button class="square-button" onclick="toggleSubButton(this)">День 12</button>
-        <a href="day12.html" class="sub-button">Переглянути фото</a>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    function toggleSubButton(btn) {
-      const sub = btn.nextElementSibling;
-      sub.classList.toggle('show');
-    }
-  </script>
-</body>
-</html>
+        <button class="square-button" on
