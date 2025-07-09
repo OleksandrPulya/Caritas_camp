@@ -15,8 +15,8 @@
     header {
       background-color: #007bc7;
       padding: 20px;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
       position: fixed;
       top: 0;
@@ -42,13 +42,36 @@
       color: white;
     }
 
+    .nav-center {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background: white;
+      color: #000000;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-button:hover {
+      background-color: #004c8c;
+      color: white;
+    }
+
     .back-home {
+      justify-self: end;
+      margin-right: 30px;
       background: white;
       color: #000000;
       padding: 10px 5px;
       border-radius: 25px;
       font-weight: bold;
-      margin-right: 30px;
       text-decoration: none;
       border: 2px solid white;
       transition: background-color 0.3s, color 0.3s;
@@ -110,6 +133,12 @@
       <img src="logo.png" alt="Логотип">
       <div class="logo-text">Caritas camp</div>
     </div>
+
+    <div class="nav-center">
+      <a class="nav-button" href="photo.html">Фото</a>
+      <a class="nav-button" href="video.html">Відео</a>
+    </div>
+
     <a class="back-home" href="index.html">← На головну</a>
   </header>
 
