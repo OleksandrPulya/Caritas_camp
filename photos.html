@@ -120,6 +120,24 @@
       color: white;
     }
 
+    .sub-wrapper {
+      width: 300px;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      background-color: black;
+      border: 2px solid black;
+      border-radius: 10px;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      margin-top: 4px;
+    }
+
+    .sub-wrapper.show {
+      max-height: 60px;
+      opacity: 1;
+      padding: 5px 0;
+    }
+
     .sub-button {
       width: 250px;
       background-color: white;
@@ -128,27 +146,16 @@
       border-radius: 8px;
       font-size: 14px;
       padding: 5px 10px;
-      margin-top: 4px;
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, opacity 0.3s ease, background-color 0.3s, color 0.3s;
+      margin: 0 auto;
+      text-align: center;
       text-decoration: none;
-    }
-
-    .sub-button.show {
-      max-height: 40px;
-      opacity: 1;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .sub-button:hover {
       background-color: #ffcc00;
       color: white;
-    }
-
-    a.sub-button {
-      display: inline-block;
-      text-align: center;
     }
   </style>
 </head>
@@ -171,61 +178,86 @@
 
   <main>
     <div class="button-grid">
+      <!-- Повторюється для кожного дня -->
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 1</button>
-        <a href="day1.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day1.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 2</button>
-        <a href="day2.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day2.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 3</button>
-        <a href="day3.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day3.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 4</button>
-        <a href="day4.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day4.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 5</button>
-        <a href="day5.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day5.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 6</button>
-        <a href="day6.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day6.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 7</button>
-        <a href="day7.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day7.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 8</button>
-        <a href="day8.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day8.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 9</button>
-        <a href="day9.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day9.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 10</button>
-        <a href="day10.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day10.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 11</button>
-        <a href="day11.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day11.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 12</button>
-        <a href="day12.html" class="sub-button">Переглянути фото</a>
+        <div class="sub-wrapper">
+          <a href="day12.html" class="sub-button">Переглянути фото</a>
+        </div>
       </div>
     </div>
   </main>
 
   <script>
     function toggleSubButton(btn) {
-      const sub = btn.nextElementSibling;
-      sub.classList.toggle('show');
+      const wrapper = btn.nextElementSibling;
+      wrapper.classList.toggle('show');
     }
   </script>
 </body>
