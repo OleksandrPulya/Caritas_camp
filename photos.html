@@ -2,6 +2,7 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Фото з табору</title>
   <link rel="icon" href="logo.png" type="image/png">
   <style>
@@ -83,7 +84,7 @@
     }
 
     .side-banner {
-      width: 150px;
+      width: 100px;
       position: fixed;
       top: 100px;
       z-index: 500;
@@ -91,31 +92,31 @@
 
     .left-banner {
       left: 0;
-      padding-left: 50px;
+      padding-left: 10px;
     }
 
     .right-banner {
       right: 0;
-      padding-right: 50px;
+      padding-right: 10px;
     }
 
     .side-banner img {
       width: 100%;
-      max-width: 150px;
       border-radius: 200px;
     }
 
     main {
-      max-width: 800px;
-      margin: 160px 170px;
-      padding: 0 180px;
+      max-width: 1000px;
+      margin: 160px auto;
+      padding: 0 20px;
       text-align: center;
     }
 
     .button-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+      justify-items: center;
     }
 
     .button-wrapper {
@@ -123,10 +124,12 @@
       flex-direction: column;
       align-items: center;
       padding: 2px 0;
+      width: 100%;
+      max-width: 300px;
     }
 
     .square-button {
-      width: 300px;
+      width: 100%;
       height: 36px;
       background-color: white;
       color: #007bc7;
@@ -144,7 +147,7 @@
     }
 
     .sub-wrapper {
-      width: 300px;
+      width: 100%;
       overflow: hidden;
       max-height: 0;
       opacity: 0;
@@ -162,7 +165,7 @@
     }
 
     .sub-button {
-      width: 250px;
+      width: 90%;
       background-color: white;
       color: #000;
       font-weight: bold;
@@ -170,7 +173,7 @@
       border-radius: 8px;
       font-size: 14px;
       padding: 5px 10px;
-      margin: 0 auto;
+      margin: 0 auto 5px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -180,6 +183,34 @@
     .sub-button:hover {
       background-color: #ffcc00;
       color: white;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding: 15px;
+      }
+
+      .logo-container {
+        justify-content: center;
+        margin-left: 0;
+      }
+
+      .back-home {
+        justify-self: center;
+        margin-right: 0;
+      }
+
+      .side-banner {
+        display: none;
+      }
+
+      main {
+        margin: 120px 10px 20px 10px;
+        padding: 0 10px;
+      }
     }
   </style>
 </head>
