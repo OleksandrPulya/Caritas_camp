@@ -132,12 +132,29 @@
       color: #007bc7;
     }
 
+    .hamburger-menu{
+      color: white;
+      font-size: x-large;
+      display: none;
+      margin-right: 1em;
+      cursor: pointer;
+    }
+
+    .nav-wrapper{
+      display: contents
+    }
+
     /* 📱 Мобільна адаптація */
     @media (max-width: 768px) {
       header {
-        grid-template-columns: 1fr;
+        /*grid-template-columns: 1fr;*/
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
         text-align: center;
         padding: 15px;
+        gap: 0;
       }
 
       .logo-container {
@@ -153,10 +170,15 @@
         flex-direction: column;
         gap: 10px;
         margin: 10px 0;
+
+        display: none;
       }
 
       .back-home {
-        margin: 10px auto 0;
+        /*margin: 10px auto 0;*/
+        margin: 0;
+
+        display: none;
       }
 
       .side-banner {
@@ -165,28 +187,50 @@
 
       main {
         padding: 0 20px;
-        margin-top: 180px;
+        margin-top: 120px;
       }
 
       h1 {
         font-size: 1.5em;
       }
+
+      .hamburger-menu{
+        display: inline;
+      }
+
+      .nav-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100em;
+      }
+
     }
   </style>
 </head>
 <body>
-  <header>
+  <header id="header">
     <div class="logo-container">
       <img src="logo.png" alt="Логотип">
       <div class="logo-text">Caritas camp</div>
     </div>
 
-    <div class="nav-center">
-      <a class="nav-button" href="photos.html">Фото</a>
-      <a class="nav-button" href="videos.html">Відео</a>
+    <!-- меню для телефону -->
+    <a class="hamburger-menu" onclick="toggleMenu()">☰</a>
+    <div class="nav-wrapper">
+
+      <div class="nav-center" id="navCenter">
+        <a class="nav-button" href="photos.html">Фото</a>
+        <a class="nav-button" href="videos.html">Відео</a>
+      </div>
+
+      <a class="back-home" href="index.html" id="backHome">← На головну</a>
+
     </div>
 
-    <a class="back-home" href="index.html">← На головну</a>
+
+
+
   </header>
 
   <!-- Лівий банер -->
@@ -199,7 +243,7 @@
     <img src="baner.jpg" alt="Банер справа">
   </div>
 
-  <main>
+  <main id="main">
     <h1>Про нас</h1>
     <p><b>Карітас (Caritas)</b> — це міжнародна мережа благодійних організацій, створена під егідою Католицької Церкви. Основною метою діяльності Карітасу є допомога людям у потребі, незалежно від їхньої національності, віросповідання чи соціального статусу.</p>
 
@@ -244,6 +288,35 @@
 
     <p>🔗 Офіційний сайт <b>Caritas Ukraine</b>: <a href="https://caritas.ua" target="_blank">https://caritas.ua</a></p>
     <p>🔗 Офіційний сайт <b>Caritas Khmelnytskyi</b>: <a href="https://www.caritas.km.ua/" target="_blank">https://www.caritas.km.ua/</a></p>
+
+    <script>
+      let toggle = false
+      const navCenter = document.getElementById("navCenter");
+      const backHome = document.getElementById("backHome")
+      const main = document.getElementById("main")
+      const header = document.getElementById("header")
+
+      function toggleMenu() {
+
+        if (toggle === false){
+          toggle = true
+
+          navCenter.style.display = "block"
+          backHome.style.display = "block"
+          main.style.marginTop = "150px"
+          header.style.gap = "10px"
+        } else {
+          toggle = false
+
+          navCenter.style.display = "none"
+          backHome.style.display = "none"
+          main.style.marginTop = "120px"
+          header.style.gap = "0"
+        }
+
+      }
+
+    </script>
   </main>
 </body>
 </html>
