@@ -3,13 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Фото з табору</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="logo.png" type="image/png">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -19,54 +14,41 @@
 
     header {
       background-color: #007bc7;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
-
-    .header-top {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      width: 100%;
-      justify-content: center;
-      transition: opacity 0.3s ease;
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      margin-left: 30px;
     }
 
     .logo-container img {
-      height: 40px;
+      height: 50px;
+      margin-right: 15px;
     }
 
     .logo-text {
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 2em;
       color: white;
     }
 
     .nav-center {
       display: flex;
       gap: 15px;
-      padding: 10px 0;
-      transition: all 0.3s ease;
       justify-content: center;
-      width: 100%;
-      flex-wrap: wrap;
     }
 
-    .nav-button,
-    .back-home {
+    .nav-button {
       background: white;
       color: #000000;
       padding: 10px 15px;
@@ -75,20 +57,29 @@
       text-decoration: none;
       border: 2px solid white;
       transition: background-color 0.3s, color 0.3s;
-      font-size: 1em;
     }
 
-    .nav-button:hover,
-    .back-home:hover {
+    .nav-button:hover {
       background-color: #004c8c;
       color: white;
     }
 
-    main {
-      max-width: 800px;
-      margin: 180px auto 40px;
-      padding: 0 20px;
-      text-align: center;
+    .back-home {
+      justify-self: end;
+      margin-right: 30px;
+      background: white;
+      color: #000000;
+      padding: 10px 5px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .back-home:hover {
+      background-color: #ffffff;
+      color: #004c8c;
     }
 
     .side-banner {
@@ -96,7 +87,6 @@
       position: fixed;
       top: 100px;
       z-index: 500;
-      display: none;
     }
 
     .left-banner {
@@ -115,21 +105,29 @@
       border-radius: 200px;
     }
 
+    main {
+      max-width: 800px;
+      margin: 160px 170px;
+      padding: 0 180px;
+      text-align: center;
+    }
+
     .button-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0px;
     }
 
     .button-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 2px 0;
     }
 
     .square-button {
-      width: 90%;
-      height: 40px;
+      width: 300px;
+      height: 36px;
       background-color: white;
       color: #007bc7;
       font-size: 15px;
@@ -146,7 +144,7 @@
     }
 
     .sub-wrapper {
-      width: 90%;
+      width: 300px;
       overflow: hidden;
       max-height: 0;
       opacity: 0;
@@ -158,13 +156,13 @@
     }
 
     .sub-wrapper.show {
-      max-height: 100px;
+      max-height: 60px;
       opacity: 1;
       padding: 5px 0;
     }
 
     .sub-button {
-      width: 90%;
+      width: 250px;
       background-color: white;
       color: #000;
       font-weight: bold;
@@ -172,7 +170,7 @@
       border-radius: 8px;
       font-size: 14px;
       padding: 5px 10px;
-      margin: 2px auto;
+      margin: 0 auto;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -183,59 +181,64 @@
       background-color: #ffcc00;
       color: white;
     }
-
-    /* Адаптація */
     @media (max-width: 768px) {
-      .side-banner {
-        display: none;
-      }
+  header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+    padding: 10px 10px;
+    row-gap: 5px;
+    height: auto;
+  }
 
-      .logo-text {
-        font-size: 1.2em;
-      }
+  .logo-container {
+    justify-content: center;
+    margin: 0;
+    transition: opacity 0.3s ease, height 0.3s ease;
+  }
 
-      .nav-button,
-      .back-home {
-        font-size: 0.9em;
-        padding: 8px 12px;
-      }
+  .logo-container.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
 
-      .square-button {
-        font-size: 14px;
-      }
+  .nav-center {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-      main {
-        margin: 160px 10px 40px;
-        padding: 0 10px;
-      }
-    }
+  .back-home {
+    justify-self: center;
+    margin: 0 auto;
+  }
 
-    /* Сховати верх при скролі */
-    .hide-header-top .header-top {
-      opacity: 0;
-      height: 0;
-      overflow: hidden;
-      padding: 0;
-    }
+  main {
+    margin: 140px 20px 20px 20px;
+    padding: 0;
+  }
 
-    .hide-header-top .nav-center {
-      padding-top: 10px;
-    }
+  .side-banner {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
-  <header id="main-header">
-    <div class="header-top">
-      <div class="logo-container">
-        <img src="logo.png" alt="Логотип">
-        <div class="logo-text">Caritas camp</div>
-      </div>
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="Логотип">
+      <div class="logo-text">Caritas camp</div>
     </div>
+
     <div class="nav-center">
       <a class="nav-button" href="about.html">Про нас</a>
       <a class="nav-button" href="videos.html">Відео</a>
-      <a class="back-home" href="index.html">← На головну</a>
     </div>
+
+    <a class="back-home" href="index.html">← На головну</a>
   </header>
 
   <div class="side-banner left-banner">
@@ -327,23 +330,22 @@
   </main>
 
   <script>
-    function toggleSubButton(btn) {
-      const wrapper = btn.nextElementSibling;
-      wrapper.classList.toggle('show');
-    }
-        // Скрипт для приховання верхньої частини хедера при скролі
-    let lastScroll = 0;
-    const header = document.getElementById('main-header');
+  function toggleSubButton(btn) {
+    const wrapper = btn.nextElementSibling;
+    wrapper.classList.toggle('show');
+  }
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > 80) {
-        header.classList.add('hide-header-top');
+  // Сховати логотип при скролі на мобільних
+  window.addEventListener('scroll', () => {
+    const logoContainer = document.querySelector('.logo-container');
+    if (window.innerWidth <= 768) {
+      if (window.scrollY > 50) {
+        logoContainer.classList.add('hidden');
       } else {
-        header.classList.remove('hide-header-top');
+        logoContainer.classList.remove('hidden');
       }
-      lastScroll = currentScroll;
-    });
-  </script>
+    }
+  });
+</script>
 </body>
 </html>
