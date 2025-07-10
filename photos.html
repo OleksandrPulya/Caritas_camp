@@ -182,48 +182,41 @@
       color: white;
     }
     @media (max-width: 768px) {
-  header {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    text-align: center;
-    padding: 10px 10px;
-    row-gap: 5px;
-    height: auto;
-  }
+      .logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 15px;
+      }
 
-  .logo-container {
-    justify-content: center;
-    margin: 0;
-    transition: opacity 0.3s ease, height 0.3s ease;
-  }
+      .logo-text {
+        font-size: 1.5em;
+      }
 
-  .logo-container.hidden {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
+      .phone {
+        margin: 15px auto 0;
+      }
 
-  .nav-center {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+      .main-title {
+        font-size: 2em;
+      }
 
-  .back-home {
-    justify-self: center;
-    margin: 0 auto;
-  }
+      .subtitle {
+        font-size: 1.2em;
+      }
 
-  main {
-    margin: 140px 20px 20px 20px;
-    padding: 0;
-  }
+      nav {
+        margin-top: 30px;
+      }
 
-  .side-banner {
-    display: none;
-  }
-}
+      nav a {
+        font-size: 1em;
+        padding: 6px 16px;
+      }
+
+      .site-info {
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
 <body>
