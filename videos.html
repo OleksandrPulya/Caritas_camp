@@ -156,9 +156,11 @@
     }
 
     .sub-wrapper.show {
-      max-height: 60px;
+      max-height: 1000px; /* Достатньо для 10+ кнопок */
       opacity: 1;
       padding: 5px 0;
+      overflow-y: auto;
+      transition: max-height 0.5s ease;
     }
 
     .sub-button {
