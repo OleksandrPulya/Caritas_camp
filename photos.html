@@ -230,27 +230,28 @@
       padding: 0 20px;
       margin-top: 150px;
       width: 100%;
-      align-items: flex-start;
+      align-items: center;  /* зміна */
     }
 
     .button-grid {
       grid-template-columns: 1fr;
-      justify-items: start;
+      justify-items: center;  /* зміна */
     }
 
     .button-wrapper {
-      align-items: flex-start;
+      align-items: center;  /* зміна */
     }
 
     .square-button {
       width: 100%;
-      max-width: 100%;
-      text-align: left;
+      max-width: 300px; /* обмежуємо максимальну ширину кнопок */
+      text-align: center;  /* зміна */
     }
 
     .sub-button {
       width: 100%;
-      text-align: left;
+      max-width: 280px; /* трохи менша за кнопкою */
+      text-align: center; /* зміна */
     }
 
     .logo-container.hidden {
@@ -260,6 +261,11 @@
     .nav-wrapper {
       flex-direction: column;
       align-items: flex-start;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center; /* додано */
       width: 100%;
     }
   }
