@@ -206,7 +206,14 @@
       border-radius: 2px;
     }
 
-    /* --- Мобільна версія --- */
+    .desktop-only {
+      display: inline-block;
+    }
+
+    .mobile-only {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       header {
         grid-template-columns: auto auto auto;
@@ -223,7 +230,7 @@
         flex-direction: column;
         background-color: #007bc7;
         position: absolute;
-        top: 60px; /* щоб меню було під хедером */
+        top: 60px;
         left: 0;
         right: 0;
         padding: 5px 0;
@@ -241,12 +248,16 @@
         font-size: 15px;
       }
 
-      .back-home {
-        display: none;
+      .back-home.desktop-only {
+        display: none !important;
       }
 
       .side-banner {
         display: none;
+      }
+
+      .mobile-only {
+        display: inline-block !important;
       }
 
       main {
@@ -298,9 +309,10 @@
     <div class="nav-center" id="nav">
       <a class="nav-button" href="about.html">Про нас</a>
       <a class="nav-button" href="videos.html">Відео</a>
+      <a class="nav-button mobile-only" href="index.html">← На головну</a>
     </div>
 
-    <a class="back-home" href="index.html">← На головну</a>
+    <a class="back-home desktop-only" href="index.html">← На головну</a>
   </header>
 
   <div class="side-banner left-banner">
@@ -401,7 +413,7 @@
     </div>
   </main>
 
-  <script>
+    <script>
     function toggleMenu() {
       const nav = document.getElementById('nav');
       nav.classList.toggle('active');
