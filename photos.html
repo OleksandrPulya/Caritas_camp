@@ -151,7 +151,9 @@
     }
 
     .sub-wrapper {
-      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       overflow: hidden;
       max-height: 0;
       opacity: 0;
@@ -161,6 +163,7 @@
       transition: max-height 0.3s ease, opacity 0.3s ease;
       margin-top: 4px;
     }
+
 
     .sub-wrapper.show {
       max-height: 1000px; /* Достатньо для 10+ кнопок */
@@ -180,12 +183,13 @@
       border-radius: 8px;
       font-size: 14px;
       padding: 5px 10px;
-      margin: 0 auto;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       transition: background-color 0.3s, color 0.3s;
+      margin: 4px 0; /* Вирівнювання по вертикалі */
     }
+
 
     .sub-button:hover {
       background-color: #ffcc00;
