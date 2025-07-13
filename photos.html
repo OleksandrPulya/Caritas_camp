@@ -193,66 +193,76 @@
   }
 
   /* МОБІЛЬНА ВЕРСІЯ */
-  @media (max-width: 768px) {
-    header {
-      grid-template-columns: 1fr;
-      text-align: center;
-      padding: 10px;
-    }
-
-    .logo-container {
-      justify-content: center;
-      margin: 0 auto;
-    }
-
-    .logo-text {
-      font-size: 1.5em;
-    }
-
-    .nav-center,
-    .back-home {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .side-banner {
-      display: none;
-    }
-
-    main {
-      padding: 0 10px;
-      margin-top: 150px;
-      width: 100%;
-    }
-
-    .button-grid {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    .square-button {
-      width: 100%;
-      max-width: 320px;
-    }
-
-    .sub-button {
-      width: 90%;
-      max-width: 300px;
-    }
-
-    .logo-container.hidden {
-      display: none;
-    }
-
-    .nav-wrapper {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: auto 1fr auto;
+    padding: 10px 20px;
+    text-align: left;
   }
+
+  .logo-container {
+    justify-content: flex-start;
+    margin: 0;
+  }
+
+  .logo-text {
+    font-size: 1.5em;
+  }
+
+  .nav-center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0 auto;
+  }
+
+  .back-home {
+    margin-right: 0;
+    justify-self: end;
+  }
+
+  .side-banner {
+    display: none;
+  }
+
+  main {
+    padding: 0 20px;
+    margin-top: 150px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .button-grid {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .button-wrapper {
+    align-items: flex-start;
+  }
+
+  .square-button {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .sub-button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .logo-container.hidden {
+    display: none;
+  }
+
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
 </style>
 </head>
 <body>
