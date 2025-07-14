@@ -266,10 +266,16 @@
     </div>
   </main>
 
-  <script>
-    function toggleSubButton(btn) {
-      const wrapper = btn.nextElementSibling;
-      wrapper.classList.toggle('show');
+    <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+    }
+
+    function toggleSubButton(button) {
+      const subWrapper = button.nextElementSibling;
+      if (!subWrapper) return;
+      subWrapper.classList.toggle('show');
     }
   </script>
 </body>
