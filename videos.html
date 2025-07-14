@@ -40,14 +40,35 @@
       color: white;
     }
 
-    .phone {
+    .nav-center {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-button {
+      background-color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #007bc7;
+      transition: background-color 0.3s;
+    }
+
+    .nav-button:hover {
+      background-color: #cce8f9;
+    }
+
+    .back-home {
       background: white;
       padding: 10px 20px;
       border-radius: 25px;
       font-weight: bold;
       margin-right: 30px;
       color: #000;
-      margin-top: 10px;
+      text-decoration: none;
     }
 
     .banner img {
@@ -100,22 +121,64 @@
       padding: 0 20px;
     }
 
-    .site-info p {
-      margin-bottom: 15px;
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 20px;
     }
 
-    .extra-photo {
-      margin: 40px 0;
+    .button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .extra-photo img {
-      width: 90%;
-      max-width: 800px;
+    .square-button {
+      background-color: #007bc7;
+      color: white;
+      border: none;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
 
-    /* 📱 Мобільна адаптація */
+    .square-button:hover {
+      background-color: #005a99;
+    }
+
+    .sub-wrapper {
+      display: none;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
+    .sub-wrapper.show {
+      display: flex;
+    }
+
+    .sub-button {
+      background-color: #eee;
+      color: #000;
+      text-decoration: none;
+      margin: 5px 0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .sub-button:hover {
+      background-color: #ccc;
+    }
+
+    .side-banner {
+      display: none; /* Ховаємо банери, якщо вони не використовуються */
+    }
+
     @media (max-width: 768px) {
       .logo-container {
         flex-direction: column;
@@ -169,14 +232,6 @@
     <a class="back-home" href="index.html">← На головну</a>
   </header>
 
-  <div class="side-banner left-banner">
-    <img src="baner.jpg" alt="Банер зліва">
-  </div>
-
-  <div class="side-banner right-banner">
-    <img src="baner.jpg" alt="Банер справа">
-  </div>
-
   <main>
     <h1 style="text-align: center; color: #000; margin-bottom: 20px;">Відео</h1>
 
@@ -188,6 +243,7 @@
           <a href="https://youtube.com/playlist?list=PLnTpBVxQT_7_JkUKILozBBVEh9y9eKiyY&si=lPw5LRtThoGdzh4k" class="sub-button">Дискотека</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 2</button>
         <div class="sub-wrapper">
@@ -195,26 +251,30 @@
           <a href="https://drive.google.com/drive/folders/1XlzFfcDQTm1M8vk6eKG4bbOVLmW55u8k?usp=drive_link" class="sub-button">Дискотека</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 3</button>
         <div class="sub-wrapper">
           <a href="day3.html" class="sub-button">Поїздка до Любліна</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 4</button>
         <div class="sub-wrapper">
           <a href="day4.html" class="sub-button">Вітання з днем народження</a>
-          <a href="day3.html" class="sub-button">Битва команд</a>
+          <a href="day4.html" class="sub-button">Битва команд</a>
           <a href="day4.html" class="sub-button">Шоу талантів</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 5</button>
         <div class="sub-wrapper">
           <a href="day6.html" class="sub-button">Поїздка до Пулав</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 6</button>
         <div class="sub-wrapper">
@@ -223,6 +283,7 @@
           <a href="day6.html" class="sub-button">Дискотека</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 7</button>
         <div class="sub-wrapper">
@@ -232,6 +293,7 @@
           <a href="day7.html" class="sub-button">Дискотека</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 8</button>
         <div class="sub-wrapper">
@@ -239,18 +301,21 @@
           <a href="day8.html" class="sub-button">Tik Tok</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 9</button>
         <div class="sub-wrapper">
           <a href="day9.html" class="sub-button">Поїздка до Любліна</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 10</button>
         <div class="sub-wrapper">
           <a href="day10.html" class="sub-button">Аквапарк</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 11</button>
         <div class="sub-wrapper">
@@ -258,6 +323,7 @@
           <a href="day11.html" class="sub-button">Gala concert</a>
         </div>
       </div>
+
       <div class="button-wrapper">
         <button class="square-button" onclick="toggleSubButton(this)">День 12</button>
         <div class="sub-wrapper">
@@ -267,12 +333,7 @@
     </div>
   </main>
 
-    <script>
-    function toggleMenu() {
-      const nav = document.getElementById('nav');
-      nav.classList.toggle('active');
-    }
-
+  <script>
     function toggleSubButton(button) {
       const subWrapper = button.nextElementSibling;
       if (!subWrapper) return;
