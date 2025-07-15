@@ -410,16 +410,24 @@
     </div>
   </main>
 
-    <script>
+  <script>
+    let toggle = false;
+    const navCenter = document.getElementById("navCenter");
+    const backHome = document.getElementById("backHome");
+    const main = document.getElementById("main");
+    const header = document.getElementById("header");
+
     function toggleMenu() {
-      const nav = document.getElementById('nav');
-      nav.classList.toggle('active');
+      toggle = !toggle;
+      navCenter.style.display = toggle ? "block" : "none";
+      backHome.style.display = toggle ? "block" : "none";
+      main.style.marginTop = toggle ? "150px" : "120px";
+      header.style.gap = toggle ? "10px" : "0";
     }
 
     function toggleSubButton(button) {
-      const subWrapper = button.nextElementSibling;
-      if (!subWrapper) return;
-      subWrapper.classList.toggle('show');
+      const wrapper = button.nextElementSibling;
+      wrapper.classList.toggle("show");
     }
   </script>
 </body>
