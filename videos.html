@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Відео з табору</title>
+  <title>Фото з табору</title>
   <link rel="icon" href="logo.png" type="image/png" />
   <style>
     body {
@@ -280,25 +280,20 @@
   </style>
 </head>
 <body>
-  <header>
+  <header id="header">
     <div class="logo-container">
       <img src="logo.png" alt="Логотип" />
       <div class="logo-text">Caritas camp</div>
     </div>
 
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+    <a class="hamburger-menu" onclick="toggleMenu()">☰</a>
+    <div class="nav-wrapper">
+      <div class="nav-center" id="navCenter">
+        <a class="nav-button" href="about.html">Про нас</a>
+        <a class="nav-button" href="videos.html">Відео</a>
+      </div>
+      <a class="back-home" href="index.html" id="backHome">← На головну</a>
     </div>
-
-    <div class="nav-center" id="nav">
-      <a class="nav-button" href="about.html">Про нас</a>
-      <a class="nav-button" href="photos.html">Фото</a>
-      <a class="nav-button mobile-only" href="index.html">← На головну</a>
-    </div>
-
-    <a class="back-home desktop-only" href="index.html">← На головну</a>
   </header>
 
   <div class="side-banner left-banner">
